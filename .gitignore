@@ -28,3 +28,5 @@ node_modules/
 
 #only used as user preferences
 /database_connectors_properties
+
+.lck
