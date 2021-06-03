@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definition:ConnectorDefinition xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.1">
+  <id>mysql8</id>
+  <version>1.0.0</version>
+  <category icon="database.png" id="others" parentCategoryId="database"/>
+  <category icon="database.png" id="database"/>
+  <jarDependency>mysql-connector-java-8.0.25.jar</jarDependency>
+</definition:ConnectorDefinition>

@@ -1,1 +1,0 @@
- java -cp ..\hsqldb\lib\hsqldb.jar org.hsqldb.Server -database.0 .\dbBPMS\dbBPMS -dbname.0  dbBPMS
