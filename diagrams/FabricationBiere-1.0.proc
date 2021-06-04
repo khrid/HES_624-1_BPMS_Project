@@ -467,9 +467,41 @@
           <expectedDuration xmi:type="expression:Expression" xmi:id="_xdtKRMPXEeufrKYRtmlCKQ" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
         <elements xmi:type="process:ServiceTask" xmi:id="_1jmooMPXEeufrKYRtmlCKQ" name="Annoncer un retard" outgoing="_2C7o8MPXEeufrKYRtmlCKQ" incoming="_1jtWUMPXEeufrKYRtmlCKQ">
+          <textAnnotationAttachment xmi:type="process:TextAnnotationAttachment" xmi:id="_uYCegMUDEeuDm5SlX46OYg" source="_uXoO0MUDEeuDm5SlX46OYg"/>
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_1jnPscPXEeufrKYRtmlCKQ" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_1jnPsMPXEeufrKYRtmlCKQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_1jnPssPXEeufrKYRtmlCKQ" name="" content="" returnTypeFixed="true"/>
+          <connectors xmi:type="process:Connector" xmi:id="_otZtYMT3EeuDm5SlX46OYg" name="ProtocoleAnnonceRetard" definitionId="document-templating" event="ON_ENTER" ignoreErrors="true" definitionVersion="1.0.1">
+            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_otZtYcT3EeuDm5SlX46OYg" definitionId="document-templating" version="1.0.1" modelVersion="7.12.0-004">
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_otZtYsT3EeuDm5SlX46OYg" key="documentInput">
+                <expression xmi:type="expression:Expression" xmi:id="_otZtY8T3EeuDm5SlX46OYg" name="documentRetard" content="documentRetard" type="DOCUMENT_REF_TYPE" returnTypeFixed="true">
+                  <referencedElements xmi:type="process:Document" xmi:id="_qguS4MT8EeuDm5SlX46OYg" name="documentRetard"/>
+                </expression>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_otZtZMT3EeuDm5SlX46OYg" key="replacements">
+                <expression xmi:type="expression:TableExpression" xmi:id="_otZtZcT3EeuDm5SlX46OYg">
+                  <expressions xmi:type="expression:ListExpression" xmi:id="_bxtrUMT9EeuDm5SlX46OYg">
+                    <expressions xmi:type="expression:Expression" xmi:id="_bxtrUcT9EeuDm5SlX46OYg" name="brasserie" content="brasserie" returnTypeFixed="true"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_bxtrUsT9EeuDm5SlX46OYg" name="brasserie" content="brasserie" type="TYPE_VARIABLE" returnType="com.company.model.Brasserie">
+                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_bxtrU8T9EeuDm5SlX46OYg" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="com.company.model.Brasserie"/>
+                    </expressions>
+                  </expressions>
+                </expression>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_otZtasT3EeuDm5SlX46OYg" key="outputFileName">
+                <expression xmi:type="expression:Expression" xmi:id="_otZta8T3EeuDm5SlX46OYg" name="DocumentAnnonceRertard.docx" content="DocumentAnnonceRertard.docx" returnTypeFixed="true"/>
+              </parameters>
+            </configuration>
+            <outputs xmi:type="expression:Operation" xmi:id="_t0kbgMT3EeuDm5SlX46OYg">
+              <leftOperand xmi:type="expression:Expression" xmi:id="_t0kbgcT3EeuDm5SlX46OYg" name="documentRetard" content="documentRetard" type="DOCUMENT_REF_TYPE">
+                <referencedElements xmi:type="process:Document" xmi:id="_t0kbgsT3EeuDm5SlX46OYg" name="documentRetard"/>
+              </leftOperand>
+              <rightOperand xmi:type="expression:Expression" xmi:id="_t0kbg8T3EeuDm5SlX46OYg" name="document" content="document" type="CONNECTOR_OUTPUT_TYPE" returnType="org.bonitasoft.engine.bpm.document.DocumentValue">
+                <referencedElements xmi:type="definition:Output" xmi:id="_t0kbhMT3EeuDm5SlX46OYg" name="document" type="org.bonitasoft.engine.bpm.document.DocumentValue"/>
+              </rightOperand>
+              <operator xmi:type="expression:Operator" xmi:id="_t0kbhcT3EeuDm5SlX46OYg" type="DOCUMENT_CREATE_UPDATE"/>
+            </outputs>
+          </connectors>
           <loopCondition xmi:type="expression:Expression" xmi:id="_1jnPs8PXEeufrKYRtmlCKQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_1jnPtMPXEeufrKYRtmlCKQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_1jnPtcPXEeufrKYRtmlCKQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -583,6 +615,7 @@
         <elements xmi:type="process:TextAnnotation" xmi:id="_E1JYoMSfEeuRM5zPXsTHUA" text="Enregistre le nom de la bière sur une base de données MySQL externe"/>
         <elements xmi:type="process:TextAnnotation" xmi:id="_RMw1kMSfEeuRM5zPXsTHUA" text="Effectue un appel à une API REST qui renvoie une nombre aléatoire entre 1 et 100 et affecte ce nombre à la densité de la bière"/>
         <elements xmi:type="process:TextAnnotation" xmi:id="_gLSqYMSfEeuRM5zPXsTHUA" text="Envoie un email pour notifier la fin du stockage"/>
+        <elements xmi:type="process:TextAnnotation" xmi:id="_uXoO0MUDEeuDm5SlX46OYg" text="Document de retard de production généré et en pièce jointe du processus"/>
       </elements>
       <data xmi:type="process:BusinessObjectData" xmi:id="_L6-HgMO9Eeum97Fokdr50Q" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="com.company.model.Brasserie">
         <defaultValue xmi:type="expression:Expression" xmi:id="_X9MjQcO9Eeum97Fokdr50Q" name="initBrasserie()" content="def brasserieVar = new com.company.model.Brasserie()&#xD;&#xA;brasserieVar.isMaterielSterilise = brasserieInput?.isMaterielSterilise&#xD;&#xA;return brasserieVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Brasserie">
@@ -768,7 +801,7 @@
           <inputNames>brasserieInput</inputNames>
         </constraints>
       </contract>
-      <documents xmi:type="process:Document" xmi:id="_3tXsEMSIEeuDrfIRDXGjmg" name="test">
+      <documents xmi:type="process:Document" xmi:id="_3tXsEMSIEeuDrfIRDXGjmg" name="documentRetard" defaultValueIdOfDocumentStore="template.docx" documentType="INTERNAL">
         <mimeType xmi:type="expression:Expression" xmi:id="_3tXsEcSIEeuDrfIRDXGjmg" name="" content="" returnTypeFixed="true"/>
         <url xmi:type="expression:Expression" xmi:id="_3tXsEsSIEeuDrfIRDXGjmg" name="" content="" returnTypeFixed="true"/>
         <initialMultipleContent xmi:type="expression:Expression" xmi:id="_3tXsE8SIEeuDrfIRDXGjmg" name="" content="" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List" returnTypeFixed="true"/>
@@ -1007,6 +1040,13 @@
               <styles xmi:type="notation:FontStyle" xmi:id="_gLT4gsSfEeuRM5zPXsTHUA" fontName="Segoe UI"/>
               <styles xmi:type="notation:LineStyle" xmi:id="_gLT4g8SfEeuRM5zPXsTHUA"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gLT4hMSfEeuRM5zPXsTHUA" x="4410" y="190" width="174" height="104"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_uX0cEMUDEeuDm5SlX46OYg" type="3015" element="_uXoO0MUDEeuDm5SlX46OYg">
+              <children xmi:type="notation:DecorationNode" xmi:id="_uX1DIMUDEeuDm5SlX46OYg" type="5010"/>
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_uX0cEcUDEeuDm5SlX46OYg"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_uX0cEsUDEeuDm5SlX46OYg" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_uX0cE8UDEeuDm5SlX46OYg"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uX0cFMUDEeuDm5SlX46OYg" x="441" y="331" width="157" height="58"/>
             </children>
           </children>
           <styles xmi:type="notation:DescriptionStyle" xmi:id="_TjN0w68zEeuSJd-ffsoCUg"/>
@@ -1330,6 +1370,10 @@
     <edges xmi:type="notation:Connector" xmi:id="_gLZ_IMSfEeuRM5zPXsTHUA" type="4003" element="_gLZYEMSfEeuRM5zPXsTHUA" source="_gLT4gMSfEeuRM5zPXsTHUA" target="_6ZXyILi9EeuOct60VCUhnQ">
       <styles xmi:type="notation:FontStyle" xmi:id="_gLZ_IcSfEeuRM5zPXsTHUA" fontName="Segoe UI"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_gLZ_IsSfEeuRM5zPXsTHUA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_uYETsMUDEeuDm5SlX46OYg" type="4003" element="_uYCegMUDEeuDm5SlX46OYg" source="_uX0cEMUDEeuDm5SlX46OYg" target="_1jn2wMPXEeufrKYRtmlCKQ">
+      <styles xmi:type="notation:FontStyle" xmi:id="_uYETscUDEeuDm5SlX46OYg" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_uYETssUDEeuDm5SlX46OYg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
     </edges>
   </notation:Diagram>
 </xmi:XMI>
