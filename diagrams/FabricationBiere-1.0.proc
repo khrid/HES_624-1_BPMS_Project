@@ -215,7 +215,7 @@
           <data xmi:type="process:Data" xmi:id="_PSCFwMPEEeufrKYRtmlCKQ" name="randomResponse" dataType="_TjN0sa8zEeuSJd-ffsoCUg">
             <defaultValue xmi:type="expression:Expression" xmi:id="_PSCFwcPEEeufrKYRtmlCKQ" content=""/>
           </data>
-          <connectors xmi:type="process:Connector" xmi:id="_bZJ5gMPNEeufrKYRtmlCKQ" name="Test" definitionId="rest-get" event="ON_ENTER" ignoreErrors="true" definitionVersion="1.1.0">
+          <connectors xmi:type="process:Connector" xmi:id="_bZJ5gMPNEeufrKYRtmlCKQ" name="callApiRandom" definitionId="rest-get" event="ON_ENTER" ignoreErrors="true" definitionVersion="1.1.0">
             <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_bZJ5gcPNEeufrKYRtmlCKQ" definitionId="rest-get" version="1.1.0" modelVersion="7.12.0-004">
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_bZJ5gsPNEeufrKYRtmlCKQ" key="url">
                 <expression xmi:type="expression:Expression" xmi:id="_bZJ5g8PNEeufrKYRtmlCKQ" name="http://www.randomnumberapi.com/api/v1.0/random?min=1&amp;max=100&amp;count=1" content="http://www.randomnumberapi.com/api/v1.0/random?min=1&amp;max=100&amp;count=1" returnTypeFixed="true"/>
