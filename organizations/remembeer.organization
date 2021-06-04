@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<organization:Organization xmlns:organization="http://documentation.bonitasoft.com/organization-xml-schema/1.1" name="remembeer" description="Brasserie valaisanne">
+  <customUserInfoDefinitions/>
+  <users>
+    <user userName="david.crittin">
+      <firstName>David</firstName>
+      <lastName>Crittin</lastName>
+      <manager></manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="albain.dufils">
+      <firstName>Albain</firstName>
+      <lastName>Dufils</lastName>
+      <manager></manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="louise.bretz">
+      <firstName>Louise</firstName>
+      <lastName>Bretz</lastName>
+      <manager></manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="sylvain.meyer">
+      <firstName>Sylvain</firstName>
+      <lastName>Meyer</lastName>
+      <manager></manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+  </users>
+  <roles>
+    <role name="maitre-brasseur">
+      <displayName>Maitre brasseur</displayName>
+    </role>
+    <role name="resp-stock">
+      <displayName>Responsable stock</displayName>
+    </role>
+    <role name="design">
+      <displayName>Design</displayName>
+    </role>
+  </roles>
+  <groups>
+    <group name="remembeer">
+      <displayName>Remembeer</displayName>
+    </group>
+    <group name="administration" parentPath="/remembeer">
+      <displayName>Administration</displayName>
+    </group>
+    <group name="production" parentPath="/remembeer">
+      <displayName>Production</displayName>
+    </group>
+  </groups>
+  <memberships>
+    <membership>
+      <userName>david.crittin</userName>
+      <roleName>maitre-brasseur</roleName>
+      <groupName>production</groupName>
+      <groupParentPath>/remembeer</groupParentPath>
+    </membership>
+    <membership>
+      <userName>albain.dufils</userName>
+      <roleName>resp-stock</roleName>
+      <groupName>production</groupName>
+      <groupParentPath>/remembeer</groupParentPath>
+    </membership>
+    <membership>
+      <userName>louise.bretz</userName>
+      <roleName>design</roleName>
+      <groupName>administration</groupName>
+      <groupParentPath>/remembeer</groupParentPath>
+    </membership>
+    <membership>
+      <userName>sylvain.meyer</userName>
+      <roleName>maitre-brasseur</roleName>
+      <groupName>production</groupName>
+      <groupParentPath>/remembeer</groupParentPath>
+    </membership>
+  </memberships>
+</organization:Organization>
