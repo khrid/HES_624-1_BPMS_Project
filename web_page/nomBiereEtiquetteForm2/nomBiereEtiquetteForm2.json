@@ -2,7 +2,7 @@
   "modelVersion" : "2.0",
   "id" : "nomBiereEtiquetteForm2",
   "name" : "nomBiereEtiquetteForm2",
-  "lastUpdate" : 1623090551945,
+  "lastUpdate" : 1623092840055,
   "rows" : [
     [
       {
@@ -345,7 +345,7 @@
                         },
                         "label" : {
                           "type" : "interpolation",
-                          "value" : "Etiquette à imprimer"
+                          "value" : "Etiquette à imprimer (fichier image)"
                         },
                         "placeholder" : {
                           "type" : "constant",
