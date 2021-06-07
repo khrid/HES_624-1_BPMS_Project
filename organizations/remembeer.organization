@@ -49,6 +49,9 @@
     <role name="design">
       <displayName>Design</displayName>
     </role>
+    <role name="maitre-brasseur-certifie">
+      <displayName>Maître brasseur certifié</displayName>
+    </role>
   </roles>
   <groups>
     <group name="remembeer">
@@ -83,6 +86,12 @@
     <membership>
       <userName>sylvain.meyer</userName>
       <roleName>maitre-brasseur</roleName>
+      <groupName>production</groupName>
+      <groupParentPath>/remembeer</groupParentPath>
+    </membership>
+    <membership>
+      <userName>david.crittin</userName>
+      <roleName>maitre-brasseur-certifie</roleName>
       <groupName>production</groupName>
       <groupParentPath>/remembeer</groupParentPath>
     </membership>

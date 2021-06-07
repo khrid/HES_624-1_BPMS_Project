@@ -2,7 +2,7 @@
   "modelVersion" : "2.0",
   "id" : "stockageBouteillesForm",
   "name" : "stockageBouteillesForm",
-  "lastUpdate" : 1622658539749,
+  "lastUpdate" : 1623090525934,
   "rows" : [
     [
       {
@@ -219,12 +219,11 @@
                         "value" : "URL"
                       },
                       "url" : {
-                        "type" : "constant",
-                        "value" : "https://www.euractiv.fr/wp-content/uploads/sites/3/2019/06/Image-1024-1024-11559808-680x450.jpg"
+                        "type" : "expression",
+                        "value" : "'/bonita/portal/' + context.imageEtiquette_ref.url"
                       },
                       "assetName" : {
-                        "type" : "expression",
-                        "value" : "Image-1024-1024-11559808-680x450.jpg"
+                        "type" : "constant"
                       },
                       "alt" : {
                         "type" : "interpolation"
@@ -239,82 +238,6 @@
             }
           ]
         ]
-      }
-    ],
-    [
-      {
-        "type" : "formContainer",
-        "dimension" : {
-          "xs" : 12
-        },
-        "propertyValues" : { },
-        "reference" : "44a2ac16-1a73-479c-a597-05911655043b",
-        "hasValidationError" : false,
-        "id" : "pbFormContainer",
-        "container" : {
-          "type" : "container",
-          "dimension" : {
-            "xs" : 12
-          },
-          "propertyValues" : { },
-          "reference" : "a9fe5f29-16ed-4494-9452-1314d0d2a78c",
-          "hasValidationError" : false,
-          "id" : "pbContainer",
-          "rows" : [
-            [
-              {
-                "type" : "component",
-                "dimension" : {
-                  "md" : 12,
-                  "sm" : 12,
-                  "xs" : 12,
-                  "lg" : 12
-                },
-                "propertyValues" : {
-                  "allowHTML" : {
-                    "type" : "constant",
-                    "value" : true
-                  },
-                  "allowHtml" : {
-                    "type" : "constant",
-                    "value" : true
-                  },
-                  "labelHidden" : {
-                    "type" : "constant",
-                    "value" : true
-                  },
-                  "hidden" : {
-                    "type" : "expression",
-                    "value" : "!formOutput._submitError.message"
-                  },
-                  "cssClasses" : {
-                    "type" : "constant",
-                    "value" : "alert alert-danger col-lg-6 col-lg-offset-3"
-                  },
-                  "label" : {
-                    "type" : "interpolation"
-                  },
-                  "text" : {
-                    "type" : "interpolation",
-                    "value" : "<strong>Debug message</strong>\n<br/>\n{{formOutput._submitError.message}}\n{{submit_errors_list}}"
-                  },
-                  "alignment" : {
-                    "type" : "constant",
-                    "value" : "left"
-                  },
-                  "dimension" : {
-                    "type" : "constant",
-                    "value" : 12
-                  }
-                },
-                "reference" : "0ae1184c-292d-406d-ac9e-963a1fa9e725",
-                "hasValidationError" : false,
-                "id" : "pbText",
-                "description" : ""
-              }
-            ]
-          ]
-        }
       }
     ]
   ],
