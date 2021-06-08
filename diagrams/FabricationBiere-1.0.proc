@@ -13,18 +13,6 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_q6SxQcR_EeuDrfIRDXGjmg" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_q6SxQMR_EeuDrfIRDXGjmg" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_q6SxQsR_EeuDrfIRDXGjmg" name="" content="" returnTypeFixed="true"/>
-          <data xmi:type="process:Data" xmi:id="_pArmcMSOEeuDrfIRDXGjmg" name="titre" dataType="_TjN0sa8zEeuSJd-ffsoCUg">
-            <defaultValue xmi:type="expression:Expression" xmi:id="_pArmccSOEeuDrfIRDXGjmg" content=""/>
-          </data>
-          <data xmi:type="process:Data" xmi:id="_LEtQAMSQEeuDrfIRDXGjmg" name="select" dataType="_TjN0sa8zEeuSJd-ffsoCUg">
-            <defaultValue xmi:type="expression:Expression" xmi:id="_LEtQAcSQEeuDrfIRDXGjmg" content=""/>
-          </data>
-          <data xmi:type="process:JavaObjectData" xmi:id="_teCQoMSQEeuDrfIRDXGjmg" name="select_list" dataType="_TjN0sq8zEeuSJd-ffsoCUg" className="java.util.List">
-            <defaultValue xmi:type="expression:Expression" xmi:id="_teCQocSQEeuDrfIRDXGjmg" content="" returnType="java.util.List"/>
-          </data>
-          <data xmi:type="process:JavaObjectData" xmi:id="_SvaKgMSTEeuDrfIRDXGjmg" name="select_arraylist" dataType="_TjN0sq8zEeuSJd-ffsoCUg" className="java.util.ArrayList">
-            <defaultValue xmi:type="expression:Expression" xmi:id="_SvaKgcSTEeuDrfIRDXGjmg" content="" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.ArrayList"/>
-          </data>
           <connectors xmi:type="process:Connector" xmi:id="_RJtLQMSDEeuDrfIRDXGjmg" name="sauvegardeNomBiere" definitionId="database-mysql" event="ON_FINISH" ignoreErrors="true" definitionVersion="1.0.0">
             <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_RJtLQcSDEeuDrfIRDXGjmg" definitionId="database-mysql" version="1.0.0" modelVersion="7.12.0-004">
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_RJtLQsSDEeuDrfIRDXGjmg" key="driver">
@@ -36,8 +24,8 @@
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_RJtLRsSDEeuDrfIRDXGjmg" key="script">
                 <expression xmi:type="expression:Expression" xmi:id="_RJtLR8SDEeuDrfIRDXGjmg" name="&lt;pattern-expression>" content="INSERT INTO `bieres` (`id`, `creation`,`nom`) VALUES (NULL,NULL, '${brasserie.nomBiere}');" type="TYPE_PATTERN" returnTypeFixed="true">
                   <referencedElements xmi:type="expression:Expression" xmi:id="_m_ahwMUcEeuDm5SlX46OYg" name="brasserie.nomBiere" content="brasserie.nomBiere" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                    <referencedElements xmi:type="expression:Expression" xmi:id="_m_ahwcUcEeuDm5SlX46OYg" name="brasserie" content="brasserie" type="TYPE_VARIABLE" returnType="com.company.model.Brasserie">
-                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_m_ahwsUcEeuDm5SlX46OYg" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="com.company.model.Brasserie"/>
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_m_ahwcUcEeuDm5SlX46OYg" name="brasserie" content="brasserie" type="TYPE_VARIABLE" returnType="ch.remembeer.model.Brasserie">
+                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_m_ahwsUcEeuDm5SlX46OYg" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="ch.remembeer.model.Brasserie"/>
                     </referencedElements>
                   </referencedElements>
                 </expression>
@@ -67,8 +55,8 @@
             </outputs>
           </connectors>
           <operations xmi:type="expression:Operation" xmi:id="_EWxM0cSaEeuO8sueqVfXJA">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_EWxM0sSaEeuO8sueqVfXJA" name="brasserie" content="brasserie" type="TYPE_VARIABLE" returnType="com.company.model.Brasserie">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_EWxM08SaEeuO8sueqVfXJA" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="com.company.model.Brasserie"/>
+            <leftOperand xmi:type="expression:Expression" xmi:id="_EWxM0sSaEeuO8sueqVfXJA" name="brasserie" content="brasserie" type="TYPE_VARIABLE" returnType="ch.remembeer.model.Brasserie">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_EWxM08SaEeuO8sueqVfXJA" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="ch.remembeer.model.Brasserie"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_EWxM1MSaEeuO8sueqVfXJA" name="brasserieInput.nomBiere" content="brasserieInput?.nomBiere" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
               <referencedElements xmi:type="process:ContractInput" xmi:id="_EWxM1cSaEeuO8sueqVfXJA" name="brasserieInput" type="COMPLEX" createMode="false"/>
@@ -78,8 +66,8 @@
             </operator>
           </operations>
           <operations xmi:type="expression:Operation" xmi:id="_u-2f4MVQEeuO98lxPaHSpA">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_u-2f4cVQEeuO98lxPaHSpA" name="brasserie" content="brasserie" type="TYPE_VARIABLE" returnType="com.company.model.Brasserie">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_vbQvEMVQEeuO98lxPaHSpA" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="com.company.model.Brasserie"/>
+            <leftOperand xmi:type="expression:Expression" xmi:id="_u-2f4cVQEeuO98lxPaHSpA" name="brasserie" content="brasserie" type="TYPE_VARIABLE" returnType="ch.remembeer.model.Brasserie">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_vbQvEMVQEeuO98lxPaHSpA" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="ch.remembeer.model.Brasserie"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_u-2f4sVQEeuO98lxPaHSpA" name="newScript()" content="public enum TempsBrassage {&#xD;&#xA;&#x9;RAPIDE(2), MOYEN(5), LONG(10);&#xD;&#xA;&#xD;&#xA;&#x9;private final int value;&#xD;&#xA;&#x9;private TempsBrassage(int value) {&#xD;&#xA;&#x9;&#x9;this.value = value;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;public int getValue() {&#xD;&#xA;&#x9;&#x9;return value;&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;ArrayList&lt;Integer> temps = new ArrayList();&#xD;&#xA;&#xD;&#xA;temps.add(TempsBrassage.RAPIDE.getValue());&#xD;&#xA;temps.add(TempsBrassage.MOYEN.getValue());&#xD;&#xA;temps.add(TempsBrassage.LONG.getValue()); &#xD;&#xA;&#xD;&#xA;return temps;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List"/>
             <operator xmi:type="expression:Operator" xmi:id="_u-2f48VQEeuO98lxPaHSpA" type="JAVA_METHOD" expression="setTempsBrassage">
@@ -141,8 +129,8 @@
                 <expression xmi:type="expression:TableExpression" xmi:id="_otZtZcT3EeuDm5SlX46OYg">
                   <expressions xmi:type="expression:ListExpression" xmi:id="_bxtrUMT9EeuDm5SlX46OYg">
                     <expressions xmi:type="expression:Expression" xmi:id="_bxtrUcT9EeuDm5SlX46OYg" name="brasserie" content="brasserie" returnTypeFixed="true"/>
-                    <expressions xmi:type="expression:Expression" xmi:id="_bxtrUsT9EeuDm5SlX46OYg" name="brasserie" content="brasserie" type="TYPE_VARIABLE" returnType="com.company.model.Brasserie">
-                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_bxtrU8T9EeuDm5SlX46OYg" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="com.company.model.Brasserie"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_bxtrUsT9EeuDm5SlX46OYg" name="brasserie" content="brasserie" type="TYPE_VARIABLE" returnType="ch.remembeer.model.Brasserie">
+                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_bxtrU8T9EeuDm5SlX46OYg" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="ch.remembeer.model.Brasserie"/>
                     </expressions>
                   </expressions>
                 </expression>
@@ -162,8 +150,8 @@
             </outputs>
           </connectors>
           <operations xmi:type="expression:Operation" xmi:id="_sU_UE8PDEeufrKYRtmlCKQ">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_sU_UFMPDEeufrKYRtmlCKQ" name="brasserie" content="brasserie" type="TYPE_VARIABLE" returnType="com.company.model.Brasserie">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_sU_UFcPDEeufrKYRtmlCKQ" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="com.company.model.Brasserie"/>
+            <leftOperand xmi:type="expression:Expression" xmi:id="_sU_UFMPDEeufrKYRtmlCKQ" name="brasserie" content="brasserie" type="TYPE_VARIABLE" returnType="ch.remembeer.model.Brasserie">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_sU_UFcPDEeufrKYRtmlCKQ" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="ch.remembeer.model.Brasserie"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_sU_UFsPDEeufrKYRtmlCKQ" name="brasserieInput.isMaterielSterilise" content="brasserieInput?.isMaterielSterilise" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean">
               <referencedElements xmi:type="process:ContractInput" xmi:id="_sU_UF8PDEeufrKYRtmlCKQ" name="brasserieInput" type="COMPLEX" createMode="false"/>
@@ -437,8 +425,8 @@
               </parameters>
             </configuration>
             <outputs xmi:type="expression:Operation" xmi:id="_bZJ5tsPNEeufrKYRtmlCKQ">
-              <leftOperand xmi:type="expression:Expression" xmi:id="_bZJ5t8PNEeufrKYRtmlCKQ" name="brasserie" content="brasserie" type="TYPE_VARIABLE" returnType="com.company.model.Brasserie">
-                <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_bZJ5uMPNEeufrKYRtmlCKQ" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="com.company.model.Brasserie"/>
+              <leftOperand xmi:type="expression:Expression" xmi:id="_bZJ5t8PNEeufrKYRtmlCKQ" name="brasserie" content="brasserie" type="TYPE_VARIABLE" returnType="ch.remembeer.model.Brasserie">
+                <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_bZJ5uMPNEeufrKYRtmlCKQ" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="ch.remembeer.model.Brasserie"/>
               </leftOperand>
               <rightOperand xmi:type="expression:Expression" xmi:id="_bZJ5ucPNEeufrKYRtmlCKQ" name="newScript()" content="import java.util.logging.Logger&#xD;&#xA;&#xD;&#xA;Logger log = Logger.getLogger(&quot;org.bonitasoft&quot;)&#xD;&#xA;String value = bodyAsString.replace(&quot;[&quot;, &quot;&quot;)&#xD;&#xA;value = value.replace(&quot;]&quot;, &quot;&quot;)&#xD;&#xA;log.severe(value)&#xD;&#xA;&#xD;&#xA;return Integer.valueOf(value)" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Integer">
                 <referencedElements xmi:type="definition:Output" xmi:id="_rvDUcMPOEeufrKYRtmlCKQ" name="bodyAsString" type="java.lang.String"/>
@@ -459,8 +447,8 @@
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_XKk-kLi8EeuOct60VCUhnQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_XKk-kri8EeuOct60VCUhnQ" name="" content="" returnTypeFixed="true"/>
           <operations xmi:type="expression:Operation" xmi:id="_GIli8Me_EeuqHZ0gPxwaRQ">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_GIli8ce_EeuqHZ0gPxwaRQ" name="brasserie" content="brasserie" type="TYPE_VARIABLE" returnType="com.company.model.Brasserie">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_GIli8se_EeuqHZ0gPxwaRQ" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="com.company.model.Brasserie"/>
+            <leftOperand xmi:type="expression:Expression" xmi:id="_GIli8ce_EeuqHZ0gPxwaRQ" name="brasserie" content="brasserie" type="TYPE_VARIABLE" returnType="ch.remembeer.model.Brasserie">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_GIli8se_EeuqHZ0gPxwaRQ" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="ch.remembeer.model.Brasserie"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_GIli88e_EeuqHZ0gPxwaRQ" name="brasserieInput.densiteBiere" content="brasserieInput?.densiteBiere" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Integer">
               <referencedElements xmi:type="process:ContractInput" xmi:id="_GIli9Me_EeuqHZ0gPxwaRQ" name="brasserieInput" type="COMPLEX" createMode="false"/>
@@ -535,7 +523,7 @@
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_mPP4UMPYEeufrKYRtmlCKQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_mPP4UsPYEeufrKYRtmlCKQ" name="" content="" returnTypeFixed="true"/>
           <condition xmi:type="expression:Expression" xmi:id="_-YZpoMPYEeufrKYRtmlCKQ" name="tempsBrassage.MOYEN" content="return Long.valueOf(brasserie.tempsBrassage[1]*1000)" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long">
-            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_02tjwMVTEeuO98lxPaHSpA" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="com.company.model.Brasserie"/>
+            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_02tjwMVTEeuO98lxPaHSpA" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="ch.remembeer.model.Brasserie"/>
           </condition>
         </elements>
         <elements xmi:type="process:IntermediateCatchTimerEvent" xmi:id="_WGhEwMPZEeufrKYRtmlCKQ" name="30mn@60°" outgoing="_jeYdwMPZEeufrKYRtmlCKQ" incoming="_S3pfcMViEeuO98lxPaHSpA">
@@ -543,7 +531,7 @@
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_WGhEwsPZEeufrKYRtmlCKQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_WGhEw8PZEeufrKYRtmlCKQ" name="" content="" returnTypeFixed="true"/>
           <condition xmi:type="expression:Expression" xmi:id="_WGhExMPZEeufrKYRtmlCKQ" name="tempsBrassage.LONG" content="return Long.valueOf(brasserie.tempsBrassage[2]*1000)" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long">
-            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_5ZcvIMVTEeuO98lxPaHSpA" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="com.company.model.Brasserie"/>
+            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_5ZcvIMVTEeuO98lxPaHSpA" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="ch.remembeer.model.Brasserie"/>
           </condition>
         </elements>
         <elements xmi:type="process:IntermediateCatchTimerEvent" xmi:id="_aJ3lcMPZEeufrKYRtmlCKQ" name="30mn@70°" outgoing="_kXWtIMPZEeufrKYRtmlCKQ" incoming="_XgUTsMViEeuO98lxPaHSpA">
@@ -551,7 +539,7 @@
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_aJ3lcsPZEeufrKYRtmlCKQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_aJ3lc8PZEeufrKYRtmlCKQ" name="" content="" returnTypeFixed="true"/>
           <condition xmi:type="expression:Expression" xmi:id="_aJ3ldMPZEeufrKYRtmlCKQ" name="tempsBrassage.LONG" content="return Long.valueOf(brasserie.tempsBrassage[2]*1000)" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long">
-            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_S8hi8MVjEeuO98lxPaHSpA" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="com.company.model.Brasserie"/>
+            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_S8hi8MVjEeuO98lxPaHSpA" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="ch.remembeer.model.Brasserie"/>
           </condition>
         </elements>
         <elements xmi:type="process:IntermediateCatchTimerEvent" xmi:id="_dn-rEMPZEeufrKYRtmlCKQ" name="10mn@78°" outgoing="_lH3kEMPZEeufrKYRtmlCKQ" incoming="_X82esMViEeuO98lxPaHSpA">
@@ -559,7 +547,7 @@
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_dn-rEsPZEeufrKYRtmlCKQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_dn-rE8PZEeufrKYRtmlCKQ" name="" content="" returnTypeFixed="true"/>
           <condition xmi:type="expression:Expression" xmi:id="_dn-rFMPZEeufrKYRtmlCKQ" name="tempsBrassage.COURT" content="return Long.valueOf(brasserie.tempsBrassage[0]*1000)" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long">
-            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_WIXM0MVjEeuO98lxPaHSpA" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="com.company.model.Brasserie"/>
+            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_WIXM0MVjEeuO98lxPaHSpA" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="ch.remembeer.model.Brasserie"/>
           </condition>
         </elements>
         <elements xmi:type="process:TextAnnotation" xmi:id="_RMw1kMSfEeuRM5zPXsTHUA" text="Effectue un appel à une API REST qui renvoie une nombre aléatoire entre 1 et 100 et affecte ce nombre à la densité de la bière"/>
@@ -699,8 +687,8 @@
               </parameters>
             </configuration>
             <outputs xmi:type="expression:Operation" xmi:id="_1YG2RsfDEeuqHZ0gPxwaRQ">
-              <leftOperand xmi:type="expression:Expression" xmi:id="_1YG2R8fDEeuqHZ0gPxwaRQ" name="brasserie" content="brasserie" type="TYPE_VARIABLE" returnType="com.company.model.Brasserie">
-                <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_1YG2SMfDEeuqHZ0gPxwaRQ" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="com.company.model.Brasserie"/>
+              <leftOperand xmi:type="expression:Expression" xmi:id="_1YG2R8fDEeuqHZ0gPxwaRQ" name="brasserie" content="brasserie" type="TYPE_VARIABLE" returnType="ch.remembeer.model.Brasserie">
+                <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_1YG2SMfDEeuqHZ0gPxwaRQ" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="ch.remembeer.model.Brasserie"/>
               </leftOperand>
               <rightOperand xmi:type="expression:Expression" xmi:id="_1YG2ScfDEeuqHZ0gPxwaRQ" name="setNombresBouteillesProduites" content="import java.util.logging.Logger&#xD;&#xA;&#xD;&#xA;Logger log = Logger.getLogger(&quot;org.bonitasoft&quot;)&#xD;&#xA;String value = bodyAsString.replace(&quot;[&quot;, &quot;&quot;)&#xD;&#xA;value = value.replace(&quot;]&quot;, &quot;&quot;)&#xD;&#xA;log.severe(value)&#xD;&#xA;&#xD;&#xA;return Integer.valueOf(value)" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Integer">
                 <referencedElements xmi:type="definition:Output" xmi:id="_FEEYoMfEEeuqHZ0gPxwaRQ" name="bodyAsString" type="java.lang.String"/>
@@ -839,9 +827,9 @@
         </elements>
         <elements xmi:type="process:TextAnnotation" xmi:id="_Mu59YMfEEeuqHZ0gPxwaRQ" text="Effectue un appel à une API REST qui renvoie une nombre aléatoire entre 100 et 10'000 et affecte ce nombre au nombre bouteilles produites"/>
       </elements>
-      <data xmi:type="process:BusinessObjectData" xmi:id="_L6-HgMO9Eeum97Fokdr50Q" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="com.company.model.Brasserie">
-        <defaultValue xmi:type="expression:Expression" xmi:id="_X9MjQcO9Eeum97Fokdr50Q" name="initBrasserie()" content="def brasserieVar = new com.company.model.Brasserie()&#xD;&#xA;brasserieVar.isMaterielSterilise = brasserieInput?.isMaterielSterilise&#xD;&#xA;return brasserieVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Brasserie">
-          <referencedElements xmi:type="process:ContractInput" xmi:id="_X9MjQsO9Eeum97Fokdr50Q" name="brasserieInput" type="COMPLEX"/>
+      <data xmi:type="process:BusinessObjectData" xmi:id="_L6-HgMO9Eeum97Fokdr50Q" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="ch.remembeer.model.Brasserie">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_X9MjQcO9Eeum97Fokdr50Q" name="initBrasserie()" content="def brasserieVar = new ch.remembeer.model.Brasserie()&#xD;&#xA;brasserieVar.isMaterielSterilise = brasserieInput?.isMaterielSterilise&#xD;&#xA;return brasserieVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="ch.remembeer.model.Brasserie">
+          <referencedElements xmi:type="process:ContractInput" xmi:id="_lnw80MhSEeuc0MV-Q4tPBw" name="brasserieInput" type="COMPLEX"/>
         </defaultValue>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_TjN0lK8zEeuSJd-ffsoCUg">
@@ -869,7 +857,7 @@
       <connections xmi:type="process:SequenceFlow" xmi:id="__BIkQLi5EeuOct60VCUhnQ" target="_PsEQgLi6EeuOct60VCUhnQ" source="_fOD-QMO8Eeu5jNNAa7IUcQ">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="__BIkQbi5EeuOct60VCUhnQ"/>
         <condition xmi:type="expression:Expression" xmi:id="__BIkQri5EeuOct60VCUhnQ" name="newScript()" content="brasserie.isMaterielSterilise == false&#xD;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean" returnTypeFixed="true">
-          <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_Ql3wYMO9Eeum97Fokdr50Q" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="com.company.model.Brasserie"/>
+          <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_Ql3wYMO9Eeum97Fokdr50Q" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="ch.remembeer.model.Brasserie"/>
         </condition>
       </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_Lrn54Li6EeuOct60VCUhnQ" target="_xdrVEMPXEeufrKYRtmlCKQ" source="_PsEQgLi6EeuOct60VCUhnQ">
@@ -879,7 +867,7 @@
       <connections xmi:type="process:SequenceFlow" xmi:id="_NOokwLi6EeuOct60VCUhnQ" target="_xdrVEMPXEeufrKYRtmlCKQ" source="_fOD-QMO8Eeu5jNNAa7IUcQ" isDefault="true">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_NOpL0Li6EeuOct60VCUhnQ"/>
         <condition xmi:type="expression:Expression" xmi:id="_NOpL0bi6EeuOct60VCUhnQ" name="newScript()" content="brasserie.isMaterielSterilise == true" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean" returnTypeFixed="true">
-          <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_SsSqUMO9Eeum97Fokdr50Q" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="com.company.model.Brasserie"/>
+          <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_SsSqUMO9Eeum97Fokdr50Q" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="ch.remembeer.model.Brasserie"/>
         </condition>
       </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_scSTkLi6EeuOct60VCUhnQ" target="_scOCILi6EeuOct60VCUhnQ" source="_xdrVEMPXEeufrKYRtmlCKQ">
@@ -933,7 +921,7 @@
       <connections xmi:type="process:SequenceFlow" xmi:id="_XKna0Li8EeuOct60VCUhnQ" name="densité &lt; 25" target="_40qTkLi8EeuOct60VCUhnQ" source="_ZLc-wMPAEeum97Fokdr50Q">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_XKna0bi8EeuOct60VCUhnQ"/>
         <condition xmi:type="expression:Expression" xmi:id="_XKna0ri8EeuOct60VCUhnQ" name="densiteBiere &lt; 25" content="brasserie.densiteBiere &lt; 25" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean" returnTypeFixed="true">
-          <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_W4ZisMSfEeuRM5zPXsTHUA" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="com.company.model.Brasserie"/>
+          <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_W4ZisMSfEeuRM5zPXsTHUA" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="ch.remembeer.model.Brasserie"/>
         </condition>
       </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_fHACkLi8EeuOct60VCUhnQ" target="_fG1qgLi8EeuOct60VCUhnQ" source="_40qTkLi8EeuOct60VCUhnQ">
@@ -943,7 +931,7 @@
       <connections xmi:type="process:SequenceFlow" xmi:id="_k4Q2kLi8EeuOct60VCUhnQ" name="densité >= 25" target="_EgIZALi5EeuOct60VCUhnQ" source="_ZLc-wMPAEeum97Fokdr50Q" isDefault="true">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_k4Q2kbi8EeuOct60VCUhnQ"/>
         <condition xmi:type="expression:Expression" xmi:id="_k4RdoLi8EeuOct60VCUhnQ" name="densiteBiere >= 25" content="brasserie.densiteBiere >= 25" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean" returnTypeFixed="true">
-          <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_f7u_wMPAEeum97Fokdr50Q" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="com.company.model.Brasserie"/>
+          <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_f7u_wMPAEeum97Fokdr50Q" name="brasserie" dataType="_TjN0tK8zEeuSJd-ffsoCUg" className="ch.remembeer.model.Brasserie"/>
         </condition>
       </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_pp8c4Li8EeuOct60VCUhnQ" target="_pp5ZkLi8EeuOct60VCUhnQ" source="_EgIZALi5EeuOct60VCUhnQ">
